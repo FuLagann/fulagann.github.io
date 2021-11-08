@@ -1,0 +1,18 @@
+
+$page-background: linen;
+
+$navbar-background: #24d;
+$navbar-background-selected: repeating-linear-gradient(
+	-45deg,
+	#24d,
+	#24d 16px,
+	#35d 16px,
+	#35d 32px
+);
+$navbar-background-hover: #12d;
+$navbar-foreground: #fff;
+$navbar-font-size: 1.1em;
+$navbar-font-family: verdana;
+
+$card-border-color: #d4d4d4;
+$card-background-color: #fff;
