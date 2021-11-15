@@ -8,23 +8,9 @@
 	[class*="col-"] {
 		display: inline-block;
 		width: 100%;
+		vertical-align: top;
 		
-		@media only screen and (min-width: 600px) {
-			&.col-t-1 { width: 8.33%; }
-			&.col-t-2 { width: 16.66%; }
-			&.col-t-3 { width: 25%; }
-			&.col-t-4 { width: 33.33%; }
-			&.col-t-5 { width: 41.66%; }
-			&.col-t-6 { width: 50%; }
-			&.col-t-7 { width: 58.33%; }
-			&.col-t-8 { width: 66.33%; }
-			&.col-t-9 { width: 75%; }
-			&.col-t-10 { width: 83.33%; }
-			&.col-t-11 { width: 91.66%; }
-			&.col-t-12 { width: 100%; }
-		}
-		
-		@media only screen and (min-width: 768px) {
+		@media only screen and (min-width: 650px) {
 			&.col-1 { width: 8.33%; }
 			&.col-2 { width: 16.66%; }
 			&.col-3 { width: 25%; }
@@ -38,15 +24,20 @@
 			&.col-11 { width: 91.66%; }
 			&.col-12 { width: 100%; }
 		}
+		
+		&:not(:last-child) > * {
+			width: calc(100% - 32px);
+		}
 	}
 }
 
 div.card {
 	width: calc(100% - 24px);
-	border: 1px solid $card-border-color;
-	border-radius: 16px;
-	background: $card-background-color;
 	padding: 4px 8px;
+	
+	+ div.card {
+		margin-top: 16px;
+	}
 	
 	.card-title {
 		text-align: center;
@@ -54,26 +45,38 @@ div.card {
 	
 	h1 {
 		font-size: 1.3em;
-		color: #000;
+		@include theme() {
+			color: theme-get(h1);
+		}
 	}
 	h2 {
 		font-size: 1.2em;
-		color: #00a;
+		@include theme() {
+			color: theme-get(h2);
+		}
 	}
 	h3 {
 		font-size: 1.15em;
-		color: #00f;
+		@include theme() {
+			color: theme-get(h3);
+		}
 	}
 	h4 {
 		font-size: 1.05em;
-		color: #44d;
+		@include theme() {
+			color: theme-get(h4);
+		}
 	}
 	h5 {
 		font-size: 0.95em;
-		color: #557;
+		@include theme() {
+			color: theme-get(h5);
+		}
 	}
 	h6 {
 		font-size: 0.9em;
-		color: #555;
+		@include theme() {
+			color: theme-get(h6);
+		}
 	}
 }

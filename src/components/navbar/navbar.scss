@@ -2,8 +2,9 @@
 @import "/styles/colors.scss";
 
 nav.main-nav {
-	font-size: $navbar-font-size;
-	font-family: $navbar-font-family;
+	font-size: 1.1em;
+	font-family: verdana;
+	margin: 0 8%;
 	
 	ul.nav-list {
 		list-style: none;
@@ -11,26 +12,31 @@ nav.main-nav {
 		padding: 0;
 		
 		li {
+			$nav-height: 36px;
+			
 			width: 25%;
-			height: 48px;
-			line-height: 48px;
+			height: $nav-height;
+			line-height: $nav-height;
 			display: inline-block;
 			text-align: center;
 			
 			a {
-				background: $navbar-background;
 				text-decoration: none;
-				color: $navbar-foreground;
 				width: 100%;
 				display: inline-block;
 				height: 100%;
 				
-				&.active {
-					background: $navbar-background-selected;
+				@include theme() {
+					background: theme-get(navbar-bg);
+					background-position: 50px 30px;
+					color: theme-get(navbar-fg);
 				}
 				
 				&:hover {
-					background: $navbar-background-hover;
+					@include theme() {
+						background: theme-get(navbar-bg-h);
+						background-position: 50px 30px;
+					}
 				}
 			}
 		}

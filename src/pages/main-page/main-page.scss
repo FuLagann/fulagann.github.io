@@ -2,12 +2,20 @@
 @import "/styles/colors.scss";
 
 .main-page {
-	background: $page-background;
 	width: 100%;
 	min-height: 100vh;
 	position: relative;
+	@include theme() {
+		background: theme-get(sides-bg);
+	}
 	
 	.container {
-		padding: 24px 16px;
+		@include theme() {
+			background: theme-get(page-bg);
+			color: theme-get(page-fg);
+		}
+		padding: 24px 8px;
+		margin: 0 8%;
+		min-height: calc(100vh - 128px - 36px - 112px);
 	}
 }

@@ -9,9 +9,9 @@ export default class Navbar extends Component {
 			<nav className="main-nav">
 				<ul className="nav-list">
 					<li><Link to="/" className="active">Home</Link></li>
-					<li><Link to="/tour">Tour</Link></li>
-					<li><Link to="/blog">Blog</Link></li>
+					<li><Link to="/portfolio">Portfolio</Link></li>
 					<li><Link to="/about">About</Link></li>
+					<li><Link to="/blog">Blog</Link></li>
 				</ul>
 			</nav>
 		);

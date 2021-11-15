@@ -1,18 +1,76 @@
 
-$page-background: linen;
+@import url('https://fonts.googleapis.com/css2?family=Codystar:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Knewave&display=swap');
 
-$navbar-background: #24d;
-$navbar-background-selected: repeating-linear-gradient(
-	-45deg,
-	#24d,
-	#24d 16px,
-	#35d 16px,
-	#35d 32px
+$--header-bg-d:
+	url("../../images/stars.png"),
+	linear-gradient(#101820 40%, #1e0b42);
+$--sides-bg-d:
+	url("./../../images/stars.png"),
+	linear-gradient(#1e0b42 30%, #101828 80%);
+$--navbar-bg-d:
+	url("../../images/stars.png"),
+	#1e0b42;
+$--navbar-bg-h-d:
+	url("../../images/stars.png"),
+	#1a4563bd;
+
+$--header-bg-l:
+	url("../../images/stars.png"),
+	linear-gradient(#4588cc 40%, #9183ac);
+$--sides-bg-l:
+	url("../../images/stars.png"),
+	linear-gradient(#9183ac 30%, #2b5580 80%);
+$--navbar-bg-l:
+	url("../../images/stars.png"),
+	#9183ac;
+$--navbar-bg-h-l:
+	url("../../images/stars.png"),
+	#6ab4e66e;
+
+$themes: (
+	dark: (
+		page-bg: #ccc,
+		page-fg: #101820,
+		header-fg: #fff,
+		header-bg: $--header-bg-d,
+		sides-bg: $--sides-bg-d,
+		navbar-bg: $--navbar-bg-d,
+		navbar-bg-h: $--navbar-bg-h-d,
+		navbar-fg: #fff,
+		header-font: 'Codystar',
+		h1: #000,
+		h2: #202870,
+		h3: #501878
+	),
+	light: (
+		page-bg: #fff,
+		page-fg: #101820,
+		header-fg: #fff,
+		header-bg: $--header-bg-l,
+		sides-bg: $--sides-bg-l,
+		navbar-bg: $--navbar-bg-l,
+		navbar-bg-h: $--navbar-bg-h-l,
+		navbar-fg: #fff,
+		header-font: 'Knewave',
+		h1: #000,
+		h2: #44d,
+		h3: #c2a
+	)
 );
-$navbar-background-hover: #12d;
-$navbar-foreground: #fff;
-$navbar-font-size: 1.1em;
-$navbar-font-family: verdana;
 
-$card-border-color: #d4d4d4;
-$card-background-color: #fff;
+$theme-map: null;
+
+@mixin theme() {
+	@each $theme, $map in $themes {
+		$theme-map: $map !global;
+		.#{$theme} & {
+			@content;
+		}
+	}
+	$theme-map: null !global;
+}
+
+@function theme-get($key) {
+	@return map-get($theme-map, $key);
+}
