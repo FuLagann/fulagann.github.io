@@ -5,3 +5,21 @@
 	border-radius: 50%;
 	float: right;
 }
+
+.name-and-handle a {
+	text-decoration: none;
+	color: inherit;
+	font-size: 1.1em;
+	
+}
+
+.handle {
+	font-size: 0.7em;
+	vertical-align: top;
+	padding-left: 10px;
+}
+
+
+.lang .handle {
+	color: navy;
+}

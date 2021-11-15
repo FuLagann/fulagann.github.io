@@ -14,6 +14,20 @@ export default class MainPage extends Component {
 			<div className="main-page dark-theme">
 				<MainHeader/>
 				<div className="container">
+					<div className="row">
+						<div className="col-4">
+							<GithubInfo/>
+							<svg href="../../images/clouds1.svg"/>
+						</div>
+						<div className="col-8">
+							<QuickProjectView/>
+						</div>
+					</div>
+					<div className="row">
+						<div className="col-12">
+							
+						</div>
+					</div>
 					{/* <div className="row full-page-row">
 						<div className="col-4 col-t-4">
 							<GithubInfo/>

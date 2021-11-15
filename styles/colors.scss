@@ -17,13 +17,13 @@ $--navbar-bg-h-d:
 
 $--header-bg-l:
 	url("../../images/stars.png"),
-	linear-gradient(#4588cc 40%, #9183ac);
+	linear-gradient(#4588cc 40%, #aac6e0);
 $--sides-bg-l:
 	url("../../images/stars.png"),
-	linear-gradient(#9183ac 30%, #2b5580 80%);
+	linear-gradient(#aac6e0 30%, #2b5580 80%);
 $--navbar-bg-l:
 	url("../../images/stars.png"),
-	#9183ac;
+	#aac6e0;
 $--navbar-bg-h-l:
 	url("../../images/stars.png"),
 	#6ab4e66e;
@@ -51,7 +51,7 @@ $themes: (
 		sides-bg: $--sides-bg-l,
 		navbar-bg: $--navbar-bg-l,
 		navbar-bg-h: $--navbar-bg-h-l,
-		navbar-fg: #fff,
+		navbar-fg: #101820,
 		header-font: 'Knewave',
 		h1: #000,
 		h2: #44d,
